@@ -3,14 +3,12 @@ Bank Marketing – Term Deposit Subscription Classification
 
 TANKALA KAVYASRI - 2026CT05039 -ML Assignment
 
-Problem statement
+Problem statement:
 A bank sells term deposits by telephone. Calling every client is expensive, so the bank wants to predict from client and campaign data whether a client will subscribe (`y` = yes/no). This is an imbalanced binary classification problem. Five classifiers are implemented on the same data and compared with Accuracy, AUC, Precision, Recall, F1 and MCC: Logistic Regression, Decision Tree, K-Nearest Neighbors, Gaussian Naive Bayes and Random Forest.
 
-Dataset description
-
+Dataset description:
 - Source:UCI Machine Learning Repository – Bank Marketing, https://archive.ics.uci.edu/dataset/222/bank+marketing, file
 - Size:45,211 rows, 16 input features + target `y`.
-- **Why chosen:** <WRITE 2–3 SENTENCES IN YOUR OWN WORDS – real business problem, mixed feature types, hidden missing values, class imbalance; meets the ≥12 features / ≥1,000 rows rule>.
 - Target:`y` (1 = subscribed, 0 = not subscribed).
 - Numeric features: age, balance, day, duration, campaign, pdays, previous.
  -Categorical features: job, marital, education, default, housing, loan, contact, month, poutcome.
@@ -21,8 +19,8 @@ Dataset description
 - Preprocessing: 80:20 split (`andom_state=42) → train 35,938 / test 8,985 rows, class ratio 88.3 : 11.7 in both. Numeric features: median imputer + StandardScaler. Categorical features: one-hot encoding (39 model inputs in total). All transformers are fitted on the training set only and merely applied to the test set.
 
 Outputs: `results/model_comparison.csv`, `results/*.png`, `data/test_data.csv`.
- Models used:
 
+ Models used:
 All five models use the same preprocessed training data and the same 20 % test set. Each model is defined in its own file under `model/`.
 
 | Model | File | Configuration |
@@ -34,7 +32,6 @@ All five models use the same preprocessed training data and the same 20 % test s
 | Random Forest (ensemble) | `model/random_forest.py` | n_estimators=200, min_samples_leaf=2, random_state=42 |
 
 Comparison table (test set, positive class = yes):
-
 | ML Model Name | Accuracy | AUC | Precision | Recall | F1 | MCC |
 |---|---|---|---|---|---|---|
 | Logistic Regression | 0.8939 | 0.8883 | 0.6017 | 0.2759 | 0.3783 | 0.3591 |
