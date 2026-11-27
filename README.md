@@ -43,13 +43,6 @@ Comparison table (test set, positive class = yes):
 | Naive Bayes (Gaussian) | 0.8558 | 0.7978 | 0.3928 | 0.4272 | 0.4093 | 0.3277 |
 | Random Forest | 0.9016 | 0.9220 | 0.6299 | 0.3853 | 0.4782 | 0.4431 |
 
-Visualisations:
-![Metric bars](results/03_metric_bars.png)
-![Grouped metrics](results/04_grouped_metrics.png)
-![Heat-map](results/05_metric_heatmap.png)
-![ROC curves](results/06_roc_curves.png)
-![Confusion matrices](results/07_confusion_matrices.png)
-
 Observations:
 Random Forest :Best Accuracy (0.902), AUC (0.922), Precision (0.630), F1 (0.478) and MCC (0.443); recall (0.385) is on par with the single tree. Averaging 200 trees reduces variance, although the train–test gap (0.973 vs 0.902) shows it still partly memorises the training data.
 Logistic Regression : Second-best AUC (0.888) and no overfitting (train 0.8933 vs test 0.8939). Precision is decent (0.602) but recall is low (0.276): of 1,051 real subscribers it finds only 290, because a linear model on a 12 %-positive class rarely pushes probabilities above 0.5.
